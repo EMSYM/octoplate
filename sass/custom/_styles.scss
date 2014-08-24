@@ -3,6 +3,24 @@ html, body {
     height: 100%;
     /* The html and body elements cannot have any padding or margin. */
 }
+
+.navbar-brand {
+	margin-top: -48px;
+}
+
+header .container {
+	margin-top: 50px;
+}
+
+.navbar-nav {
+	font-size: 22pt;
+}
+
+.navbar-inverse {
+	background-color: rgba(0,0,0,0.7);
+	background-image: none;
+}
+
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
@@ -32,3 +50,5 @@ footer[role=contentinfo] {
 #back {
   padding-left:200px;
 }
+
+
