@@ -4,11 +4,15 @@
       <header role="banner">
         {% include navigation.html %}
       </header>
+{% comment %}
       <div id="main" class="container">
         <div id="content">
+{% endcomment %}
           {{ content | expand_urls: root_url }}
+{% comment %}
         </div>
       </div>
+{% endcomment %}
     <footer role="contentinfo">{% include footer.html %}</footer>
     {% include after_footer.html %}
     </div>
