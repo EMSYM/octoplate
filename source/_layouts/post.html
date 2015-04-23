@@ -3,9 +3,15 @@ layout: default
 navbar: Blog
 single: true
 ---
-
+<div class="container">
 <div class="row">
-  <div class="page-content {% unless page.sidebar == false or site.post_asides == empty and site.default_asides == empty %}col-md-9{% endunless %}">
+  <div class="page-content
+   {% comment %}
+   {% unless page.sidebar == false or site.post_asides == empty and site.default_asides == empty %}
+   col-md-9
+   {% endunless %}
+   {% endcomment %}
+  ">
     <article class="hentry" role="article">
       {% include article.html %}
       <footer>
@@ -35,4 +41,5 @@ single: true
       </section>
     {% endif %}
   </div>
+</div>
 </div>
