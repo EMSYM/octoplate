@@ -4,7 +4,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en" xmlns:wb="http://open.weibo.com/wb"><!--<![endif]-->
 <html xmlns:wb="http://open.weibo.com/wb">
   <meta charset="utf-8">
-  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }} - {{site.subtitle}}</title>
+  <title>{% if page.title %}
+		{{ page.title }}
+	{% else %}
+		{{ site.title }} - {{site.subtitle}}
+	{% endif %}
+  </title>
   <meta name="author" content="{{ site.author }}">
 
   {% if page.description %}<meta name="description" content="{{ page.description | strip_html | condense_spaces | truncate:150 }}">{% endif %}
