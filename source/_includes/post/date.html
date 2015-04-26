@@ -10,7 +10,7 @@
 {% capture time %}
 <span class="glyphicon glyphicon-calendar"></span> 
 <time datetime="{{ date | datetime | date_to_xmlschema }}" pubdate{% if updated %} data-updated="true"{% endif %}>
-{{ page.date | date: "%Y-%m-%d" }}
+{{ date | date: "%Y-%m-%d" }}
 </time>
 {% endcapture %}
 {% endif %}
@@ -19,7 +19,7 @@
   {% capture updated %}
 	<span class="glyphicon glyphicon-calendar"></span> 
 	<time datetime="{{ updated | datetime | date_to_xmlschema }}" class="updated">
-	Updated {{ page.updated | date: "%Y-%m-%d" }}
+	Updated {{ updated | date: "%Y-%m-%d" }}
 	</time>
   {% endcapture %}
 {% else %}{% assign updated = false %}{% endif %}
