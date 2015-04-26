@@ -1,3 +1,17 @@
+{% comment %}
+example source/_data/users.yml
+
+- id: hunan
+  name: Sleepy Programmer
+  weibo: 1407353947
+  github: hn82123
+
+- id: chenbing
+  name: Chen Bing
+
+...
+{% endcomment %}
+
 {% if post.author %}
   {% assign author = post.author %}
 {% elsif page.author %}
@@ -5,4 +19,19 @@
 {% else %}
   {% assign author = site.author %}
 {% endif %}
-{% if author %}<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard">Posted by <span class="fn">{{ author }}</span></span>{% endif %}
+{% if author %}
+	{% for user in site.data.users %}
+		{% if author == user.id or author == user.name %}
+			{% if user.name %}
+				<span class="glyphicon glyphicon-user"></span> 
+				<span class="byline author vcard">作者 <span class="fn">{{ user.name }}</span></span>
+			{% endif %}
+			{% if user.weibo %}
+				<wb:follow-button uid="{{ user.weibo }}" type="red_4" height="64" width="100%"></wb:follow-button>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+{% endif %}
+
+
+
