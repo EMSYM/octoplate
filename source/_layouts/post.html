@@ -16,8 +16,8 @@ single: true
       {% include article.html %}
       <footer>
         <p class="meta text-muted">
+          {% include post/date.html %}
           {% include post/author.html %}
-          {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
         </p>
         {% unless page.sharing == false %}
           {% include post/sharing.html %}
